@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A061D0031EC67C5B00295F9C /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061D0021EC67C5B00295F9C /* BallView.swift */; };
-		A061D0051EC6AA3200295F9C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061D0041EC6AA3200295F9C /* Utilities.swift */; };
+		A061D0051EC6AA3200295F9C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061D0041EC6AA3200295F9C /* Extensions.swift */; };
 		A0C0EA411EC3FFAD003BA4DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0EA401EC3FFAD003BA4DA /* AppDelegate.swift */; };
 		A0C0EA431EC3FFAD003BA4DA /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0EA421EC3FFAD003BA4DA /* BallViewController.swift */; };
 		A0C0EA461EC3FFAD003BA4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C0EA441EC3FFAD003BA4DA /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A061D0021EC67C5B00295F9C /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
-		A061D0041EC6AA3200295F9C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A061D0041EC6AA3200295F9C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0C0EA3D1EC3FFAD003BA4DA /* 491ECormackAssn3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 491ECormackAssn3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C0EA401EC3FFAD003BA4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0C0EA421EC3FFAD003BA4DA /* BallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			children = (
 				A061D0001EC67C3500295F9C /* View */,
 				A061D0011EC67C4100295F9C /* Controller */,
-				A061D0041EC6AA3200295F9C /* Utilities.swift */,
+				A061D0041EC6AA3200295F9C /* Extensions.swift */,
 				A0C0EA401EC3FFAD003BA4DA /* AppDelegate.swift */,
 				A0C0EA441EC3FFAD003BA4DA /* Main.storyboard */,
 				A0C0EA471EC3FFAD003BA4DA /* Assets.xcassets */,
@@ -161,7 +161,7 @@
 			files = (
 				A061D0031EC67C5B00295F9C /* BallView.swift in Sources */,
 				A0C0EA431EC3FFAD003BA4DA /* BallViewController.swift in Sources */,
-				A061D0051EC6AA3200295F9C /* Utilities.swift in Sources */,
+				A061D0051EC6AA3200295F9C /* Extensions.swift in Sources */,
 				A0C0EA411EC3FFAD003BA4DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

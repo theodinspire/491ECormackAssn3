@@ -86,7 +86,7 @@ class BallView: UIView {
         ballBehavior.resistance = friction
         ballBehavior.elasticity = elasticity
         ballBehavior.friction = 0
-        ballBehavior.density = 1
+        ballBehavior.density = 3
         ballBehavior.addItem(ball)
         
         gravity.addItem(ball)
@@ -98,5 +98,18 @@ class BallView: UIView {
         animator.addBehavior(ballBehavior)
         animator.addBehavior(gravity)
         animator.addBehavior(collider)
+    }
+    
+    func getDefaultObstacleBehavior() -> UIDynamicItemBehavior {
+        let behavior = UIDynamicItemBehavior()
+        behavior.resistance = CGFloat.greatestFiniteMagnitude
+        behavior.allowsRotation = false
+        behavior.density = 1_000_000_000
+        
+        return behavior
+    }
+    
+    func getDefaultCollider() -> UICollisionBehavior {
+        return UICollisionBehavior()
     }
 }
