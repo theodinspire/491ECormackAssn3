@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HbR-8T-aUh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,14 +20,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BallView" customModule="_91ECormackAssn3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-D0-rq7">
+                                <rect key="frame" x="159" y="265" width="56" height="137"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="tLg-D0-rq7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hxj-A5-aIy"/>
+                            <constraint firstItem="tLg-D0-rq7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tiG-kv-8CS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="gameOverValue">
+                                <real key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="hazardColor">
+                                <color key="value" red="0.59999999999999998" green="0.216" blue="0.24799999999999986" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="goalColor">
+                                <color key="value" red="0.25440000000000002" green="0.59999999999999998" blue="0.216" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="winColor">
+                                <color key="value" red="0.70079999999999998" green="0.95999999999999996" blue="0.67199999999999993" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="loseColor">
+                                <color key="value" red="0.95999999999999996" green="0.67199999999999993" blue="0.69599999999999984" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="ballRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="tvM-Lw-bEo" appends="YES" id="W48-bD-fEE"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="ballView" destination="8bC-Xf-vdC" id="q0P-i2-n8B"/>
+                        <outlet property="scoreLabel" destination="tLg-D0-rq7" id="POT-Gm-PCd"/>
+                        <segue destination="LDh-hh-MzI" kind="show" identifier="gameOverSegue" id="3v1-k3-mDU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -38,6 +72,106 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="5ew-y2-i2e">
+            <objects>
+                <viewController id="LDh-hh-MzI" customClass="GameOverViewController" customModule="_91ECormackAssn3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ll3-CR-GiT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hpa-Cb-eLS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5jO-Pa-PQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You won!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="sk9-CM-gcB">
+                                <rect key="frame" x="8" y="265" width="359" height="137"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-zc-M03">
+                                <rect key="frame" x="154" y="601" width="66" height="49"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="27"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetGame:" destination="LDh-hh-MzI" eventType="touchUpInside" id="UnS-ZW-nTi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ReA-zc-M03" firstAttribute="centerX" secondItem="5jO-Pa-PQT" secondAttribute="centerX" id="6cC-fr-1KG"/>
+                            <constraint firstAttribute="trailing" secondItem="sk9-CM-gcB" secondAttribute="trailing" constant="8" id="8tu-vn-dga"/>
+                            <constraint firstItem="sk9-CM-gcB" firstAttribute="leading" secondItem="5jO-Pa-PQT" secondAttribute="leading" constant="8" id="WUB-oC-VEF"/>
+                            <constraint firstItem="sk9-CM-gcB" firstAttribute="centerX" secondItem="5jO-Pa-PQT" secondAttribute="centerX" id="kD2-6a-crs"/>
+                            <constraint firstItem="sk9-CM-gcB" firstAttribute="centerY" secondItem="5jO-Pa-PQT" secondAttribute="centerY" id="mso-gY-lem"/>
+                            <constraint firstItem="Hpa-Cb-eLS" firstAttribute="top" secondItem="ReA-zc-M03" secondAttribute="bottom" constant="17" id="pPs-cD-ln9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="sk9-CM-gcB" id="5Yq-uC-vdh"/>
+                        <segue destination="QsW-Ui-OP1" kind="unwind" identifier="unwindToStartSegue" unwindAction="unwindToStartWithSegue:" id="xIF-qN-Laq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dp-Gz-XAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QsW-Ui-OP1" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mmk-84-ryv">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="HbR-8T-aUh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Web-IO-GYn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T5a-Q0-cLE" kind="relationship" relationship="rootViewController" id="4ea-40-osf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5AZ-9n-D7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1598" y="139"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="69i-Td-Kzg">
+            <objects>
+                <viewController id="T5a-Q0-cLE" customClass="StartViewController" customModule="_91ECormackAssn3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jcJ-P2-Zjh"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ae-DZ-1nh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LLd-v3-gR0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUG-Ve-f6h">
+                                <rect key="frame" x="87.5" y="259" width="199" height="149"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="100"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="ZfN-vP-BfT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TUG-Ve-f6h" firstAttribute="centerX" secondItem="LLd-v3-gR0" secondAttribute="centerX" id="Fg6-sH-O9C"/>
+                            <constraint firstItem="TUG-Ve-f6h" firstAttribute="centerY" secondItem="LLd-v3-gR0" secondAttribute="centerY" id="KEm-4W-Epq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YpA-YP-kHL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dq0-Y8-O7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="139"/>
         </scene>
     </scenes>
 </document>
